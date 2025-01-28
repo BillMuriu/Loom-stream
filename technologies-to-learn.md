@@ -16,3 +16,5 @@
 
 5.TypeScript
 -> So that my code can be type-safe.
+
+6.React-Redux
