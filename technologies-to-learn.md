@@ -1,5 +1,7 @@
 ### TECH I USE & NEED TO LOCK IN.
 
+\*From time 2:15hrs to time 4hrs we created the sidebar component
+
 1.Neon
 -> Neon is an online postgresql database.
 
