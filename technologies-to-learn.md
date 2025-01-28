@@ -10,4 +10,7 @@
 ->This makes signing in and signing out very very easy.
 
 4.Tanstack react Query
--> This will be useful for fetching data
+-> This will be useful for fetching data.
+
+5.TypeScript
+-> So that my code can be type-safe.
