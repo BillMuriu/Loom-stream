@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 
-import { NotificationProps, WorkspaceProps } from "@/types/index.types";
+import { NotificationProps, WorkspaceProps } from "@/types/index.type";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -24,9 +24,7 @@ import { getNotifications } from "@/actions/user";
 import { useQueryData } from "@/hooks/useQueryData";
 import WorkspacePlaceholder from "./workspace-placeholder";
 import GlobalCard from "../global-card";
-// import GlobalCard from '../global-card'
 import { Button } from "@/components/ui/button";
-// import Loader from '../loader'
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import InfoBar from "../info-bar";
 import { useDispatch } from "react-redux";
@@ -78,7 +76,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
         </SelectTrigger>
         <SelectContent className="bg-[#111111] backdrop-blur-xl">
           <SelectGroup>
-            <SelectLabel className="text-neutral-400">Workspaces</SelectLabel>
+            <SelectLabel>Workspaces</SelectLabel>
             <Separator />
             {workspace.workspace.map((workspace) => (
               <SelectItem value={workspace.id} key={workspace.id}>

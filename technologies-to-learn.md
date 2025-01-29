@@ -18,3 +18,5 @@
 -> So that my code can be type-safe.
 
 6.React-Redux
+
+7.React-query
