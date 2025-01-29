@@ -24,3 +24,9 @@
 8.Master react hooks.
 
 9.Understand the concept of types casting.
+
+10.Learn and understand nextjs server actions
+
+11.Learn how to implement zod with Typescript
+
+12.Also learn how to use react-hook-form
