@@ -76,7 +76,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
         </SelectTrigger>
         <SelectContent className="bg-[#111111] backdrop-blur-xl">
           <SelectGroup>
-            <SelectLabel>Workspaces</SelectLabel>
+            <SelectLabel className="text-neutral-400">Workspaces</SelectLabel>
             <Separator />
             {workspace.workspace.map((workspace) => (
               <SelectItem value={workspace.id} key={workspace.id}>
@@ -120,7 +120,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
         )}
       <p className="w-full text-[#9D9D9D] font-bold mt-4">Menu</p>
       <nav className="w-full">
-        <ul>
+        <ul className="overflow-auto overflow-x-hidden fade-layer--side">
           {menuItems.map((item) => (
             <SidebarItem
               href={item.href}
@@ -141,7 +141,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
       <Separator className="w-4/5" />
       <p className="w-full text-[#9D9D9D] font-bold mt-4 ">Workspaces</p>
 
-      {workspace.workspace.length === 1 && workspace.members.length === 0 && (
+      {/* {workspace.workspace.length === 1 && workspace.members.length === 0 && (
         <div className="w-full mt-[-10px]">
           <p className="text-[#3c3c3c] font-medium text-sm">
             {workspace.subscription?.plan === "FREE"
@@ -149,14 +149,14 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
               : "No Workspaces"}
           </p>
         </div>
-      )}
+      )} */}
 
       <nav className="w-full">
         <ul className="h-[150px] overflow-auto overflow-x-hidden fade-layer">
           {workspace.workspace.length > 0 &&
             workspace.workspace.map(
               (item) =>
-                item.type !== "PERSONAL" && (
+                item.type !== "PUBLIC" && (
                   <SidebarItem
                     href={`/dashboard/${item.id}`}
                     selected={pathName === `/dashboard/${item.id}`}
@@ -204,11 +204,14 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
       <div className="md:hidden fixed my-4">
         <Sheet>
           <SheetTrigger asChild className="ml-2">
-            <Button variant={"ghost"} className="mt-[2px]">
+            <Button
+              variant="default"
+              className="p-3 w-12 h-12 text-lg bg-primary text-white rounded-full shadow-lg hover:scale-110 transition-transform"
+            >
               <Menu />
             </Button>
           </SheetTrigger>
-          <SheetContent side={"left"} className="p-0 w-fit h-full">
+          <SheetContent side="left" className="p-0 w-fit h-full">
             {SidebarSection}
           </SheetContent>
         </Sheet>
