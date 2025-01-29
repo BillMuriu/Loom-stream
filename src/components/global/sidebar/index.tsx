@@ -78,7 +78,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
         </SelectTrigger>
         <SelectContent className="bg-[#111111] backdrop-blur-xl">
           <SelectGroup>
-            <SelectLabel>Workspaces</SelectLabel>
+            <SelectLabel className="text-neutral-400">Workspaces</SelectLabel>
             <Separator />
             {workspace.workspace.map((workspace) => (
               <SelectItem value={workspace.id} key={workspace.id}>
