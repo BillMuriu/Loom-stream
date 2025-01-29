@@ -20,3 +20,7 @@
 6.React-Redux
 
 7.React-query
+
+8.Master react hooks.
+
+9.Understand the concept of types casting.

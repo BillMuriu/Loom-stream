@@ -1,6 +1,7 @@
 import { onAuthenticateUser, getNotifications } from "@/actions/user";
 import { redirect } from "next/navigation";
 import { verifyAccessToWorkspace } from "@/actions/workspace";
+import GlobalHeader from "@/components/global/global-header";
 import {
   getWorkspaceFolders,
   getWorkSpaces,
@@ -59,7 +60,7 @@ const Layout = async ({ params: { workspaceId }, children }: Props) => {
       <div className="flex h-screen w-screen">
         <Sidebar activeWorkspaceId={workspaceId} />
         <div className="w-full pt-28 p-6 overflow-y-scroll overflow-x-hidden">
-          {/* <GlobalHeader workspace={hasAccess.data.workspace} /> */}
+          <GlobalHeader workspace={hasAccess.data.workspace} />
           <div className="mt-4">{children}</div>
         </div>
       </div>
