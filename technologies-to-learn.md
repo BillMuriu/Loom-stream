@@ -30,3 +30,5 @@
 11.Learn how to implement zod with Typescript
 
 12.Also learn how to use react-hook-form
+
+13.Optimistic UI

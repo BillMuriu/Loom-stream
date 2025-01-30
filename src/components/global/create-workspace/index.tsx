@@ -21,17 +21,17 @@ const CreateWorkspace = (props: Props) => {
     };
   };
 
-  if (plan.subscription?.plan === "FREE") {
+  if (plan.subscription?.plan === "PRO") {
     return <></>;
   }
 
-  if (plan.subscription?.plan === "PRO")
+  if (plan.subscription?.plan === "FREE")
     return (
       <Modal
         title="Create a Workspace"
         description=" Workspaces helps you collaborate with team members. You are assigned a default personal workspace where you can share videos in private with yourself."
         trigger={
-          <Button className="bg-[#1D1D1D] text-[#707070] flex items-center gap-2 py-6 px-4 rounded-2xl">
+          <Button className="bg-[#1D1D1D] text-gray-300 flex items-center gap-2 py-6 px-4 rounded-2xl">
             <FolderPlusDuotine />
             Create Workspace
           </Button>
