@@ -32,3 +32,5 @@
 12.Also learn how to use react-hook-form
 
 13.Optimistic UI
+
+14.Master react useRef -> The value of the ref will always be inside the .count property.
