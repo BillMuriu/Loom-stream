@@ -1,6 +1,7 @@
 import { getAllUserVideos, getWorkspaceFolders } from "@/actions/workspace";
 import CreateWorkspace from "@/components/global/create-workspace";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CreateForlders from "@/components/global/create-folders";
 import {
   dehydrate,
   HydrationBoundary,
@@ -47,7 +48,7 @@ const Page = async ({ params: { workspaceId } }: Props) => {
             </TabsList>
             <div className="flex gap-x-3">
               <CreateWorkspace />
-              {/* <CreateForlders workspaceId={workspaceId} /> */}
+              <CreateForlders workspaceId={workspaceId} />
             </div>
           </div>
         </Tabs>

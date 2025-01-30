@@ -2,7 +2,7 @@
 import { getFolderInfo } from "@/actions/workspace";
 import { useQueryData } from "@/hooks/useQueryData";
 import React from "react";
-import { FolderProps } from "@/types/index.type";
+import { FolderProps } from "@/types/index.types";
 
 type Props = {
   folderId: string;
