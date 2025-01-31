@@ -125,7 +125,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
             <SidebarItem
               href={item.href}
               icon={item.icon}
-              selected={pathName === item.href}
+              selected={pathName.startsWith(item.href)}
               title={item.title}
               key={item.title}
               notifications={
