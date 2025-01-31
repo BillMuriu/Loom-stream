@@ -1,7 +1,8 @@
 import { getAllUserVideos, getWorkspaceFolders } from "@/actions/workspace";
 import CreateWorkspace from "@/components/global/create-workspace";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import CreateForlders from "@/components/global/create-folders";
+import Folders from "@/components/global/folders";
 import {
   dehydrate,
   HydrationBoundary,
@@ -51,6 +52,11 @@ const Page = async ({ params: { workspaceId } }: Props) => {
               <CreateForlders workspaceId={workspaceId} />
             </div>
           </div>
+          <section className="py-9">
+            <TabsContent value="videos">
+              <Folders workspaceId={workspaceId} />
+            </TabsContent>
+          </section>
         </Tabs>
       </div>
     </HydrationBoundary>

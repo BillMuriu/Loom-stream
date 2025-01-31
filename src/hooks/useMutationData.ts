@@ -38,6 +38,11 @@ export const useMutationData = (
   return { mutate, isPending };
 };
 
+// This custom hook `useMutationDataState` is used to track the state of mutations based on a specific `mutationKey`.
+// It uses `useMutationState` from TanStack Query to get the current mutation's `variables` (input data) and `status` (e.g., pending, success, or error).
+// The hook filters mutations using the `mutationKey`, selects the relevant data, and returns the most recent mutation's variables and status.
+// The `latestVariables` variable will give you the input data and status of the latest mutation for the given `mutationKey`.
+// This can be helpful for tracking mutation states or performing optimistic updates without causing unnecessary re-renders.
 export const useMutationDataState = (mutationKey: MutationKey) => {
   const data = useMutationState({
     filters: { mutationKey },

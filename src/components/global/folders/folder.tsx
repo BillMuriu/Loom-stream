@@ -67,12 +67,12 @@ const Folder = ({ id, name, optimistic, count }: Props) => {
         <div className="flex flex-col gap-[1px]">
           {onRename ? (
             <Input
-              onBlur={(e: React.FocusEvent<HTMLInputElement>) => {
-                updateFolderName(e);
-              }}
+              onBlur={(e: React.FocusEvent<HTMLInputElement>) =>
+                updateFolderName(e)
+              }
               autoFocus
               placeholder={name}
-              className="border-none text-base w-full outline-none text-neutral-300 bg-transparent p-0"
+              className="border-border text-base w-full outline-none text-neutral-300 bg-transparent p-0"
               ref={inputRef}
             />
           ) : (
