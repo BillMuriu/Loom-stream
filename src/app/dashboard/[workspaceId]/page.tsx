@@ -56,6 +56,9 @@ const Page = async ({ params: { workspaceId } }: Props) => {
             <TabsContent value="videos">
               <Folders workspaceId={workspaceId} />
             </TabsContent>
+            <TabsContent value="archive">
+              <h1>Archives</h1>
+            </TabsContent>
           </section>
         </Tabs>
       </div>
