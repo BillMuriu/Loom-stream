@@ -18,7 +18,12 @@ const Videos = ({ folderId, videosKey, workspaceId }: Props) => {
     getAllUserVideos(folderId)
   );
 
+  console.log("Fetched video data:", videoData);
+
   const { status: videosStatus, data: videos } = videoData as VideosProps;
+
+  console.log("Video Status:", videosStatus);
+  console.log("Videos Data:", videos);
 
   return (
     <div className="flex flex-col gap-4 mt-4">
@@ -35,6 +40,20 @@ const Videos = ({ folderId, videosKey, workspaceId }: Props) => {
             : "grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
         )}
       >
+        {/* {videosStatus === 200 ? (
+          videos.map((video) => (
+            <div key={video.id} className="p-4 border border-gray-300">
+              <h3 className="text-lg font-semibold">{video.title}</h3>
+              <p className="text-sm text-gray-500">ID: {video.id}</p>
+              <p className="text-sm text-gray-500">
+                Created At: {new Date(video.createdAt).toLocaleString()}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p className="text-[#BDBDBD]"> No videos in workspace</p>
+        )} */}
+
         {videosStatus === 200 ? (
           videos.map((video) => (
             <VideoCard key={video.id} workspaceId={workspaceId} {...video} />

@@ -1,5 +1,6 @@
 import { getAllUserVideos, getFolderInfo } from "@/actions/workspace";
 import FolderInfo from "@/components/global/folders/forlder-info";
+import Videos from "@/components/global/videos";
 // import Videos from '@/components/global/videos'
 import {
   dehydrate,
@@ -30,11 +31,11 @@ const page = async ({ params: { folderId, workspaceId } }: Props) => {
   return (
     <HydrationBoundary state={dehydrate(query)}>
       <FolderInfo folderId={folderId} />
-      {/* <Videos
+      <Videos
         workspaceId={workspaceId}
         folderId={folderId}
         videosKey="folder-videos"
-      /> */}
+      />
     </HydrationBoundary>
   );
 };
