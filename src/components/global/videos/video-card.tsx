@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-// import Loader from "../loader";
+import Loader from "../loader";
 import CardMenu from "./video-card-menu";
 // import ChangeVideoLocation from "@/components/forms/change-video-location";
-// import CopyLink from "./copy-link";
-// import Link from "next/link";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Dot, Share2, User } from "lucide-react";
+import CopyLink from "./copy-link";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Dot, Share2, User } from "lucide-react";
 
 type Props = {
   User: {
@@ -27,30 +27,29 @@ type Props = {
 };
 
 const VideoCard = (props: Props) => {
-  //   const daysAgo = Math.floor(
-  //     (new Date().getTime() - props.createdAt.getTime()) / (24 * 60 * 60 * 1000)
-  //   );
+  const daysAgo = Math.floor(
+    (new Date().getTime() - props.createdAt.getTime()) / (24 * 60 * 60 * 1000)
+  );
 
   return (
-    // <Loader
-    //   className="bg-[#171717] flex justify-center items-center border-[1px] border-[rgb(37,37,37)] rounded-xl"
-    //   state={props.processing}
-    // >
-    <div className=" group overflow-hidden cursor-pointer bg-[#171717] relative border-[1px] border-[#a3a3a3] flex flex-col rounded-xl">
-      {/* <div className="absolute top-3 right-3 z-50 gap-x-3 hidden group-hover:flex"> */}
-      <h1>Yes</h1>
-      <CardMenu
-        currentFolderName={props.Folder?.name}
-        videoId={props.id}
-        currentWorkspace={props.workspaceId}
-        currentFolder={props.Folder?.id}
-      />
-      {/* <CopyLink
+    <Loader
+      className="bg-[#171717] flex justify-center items-center border-[1px] border-[rgb(37,37,37)] rounded-xl"
+      state={props.processing}
+    >
+      <div className=" group overflow-hidden cursor-pointer bg-[#171717] relative border-[1px] border-[#252525] flex flex-col rounded-xl">
+        <div className="absolute top-3 right-3 z-50 gap-x-3 hidden group-hover:flex">
+          <CardMenu
+            currentFolderName={props.Folder?.name}
+            videoId={props.id}
+            currentWorkspace={props.workspaceId}
+            currentFolder={props.Folder?.id}
+          />
+          <CopyLink
             className="p-[5px] h-5 bg-hover:bg-transparent bg-[#252525]"
             videoId={props.id}
-          /> */}
-      {/* </div> */}
-      {/* <Link
+          />
+        </div>
+        <Link
           href={`/dashboard/${props.workspaceId}/video/${props.id}`}
           className="hover:bg-[#252525] transition duration-150 flex flex-col justify-between h-full"
         >
@@ -92,9 +91,9 @@ const VideoCard = (props: Props) => {
               </span>
             </div>
           </div>
-        </Link> */}
-    </div>
-    // </Loader>
+        </Link>
+      </div>
+    </Loader>
   );
 };
 
